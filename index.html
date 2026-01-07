@@ -2,54 +2,28 @@
 <html lang="zh-TW" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Lewis Profile ｜ 賴家祥個人簡歷與作品集</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet" />
     <link rel="icon" href="sHead.png" type="image/x-icon" />
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
-      html {
-        margin: 0;
-        padding: 0;
+      html, body {
+        margin: 0; padding: 0;
         overflow-x: hidden;
-        overscroll-behavior-y: none; /* 禁止橡皮筋效果的核心 */
-        scroll-behavior: smooth;
-      }
-
-      body {
-        font-family: "Inter", sans-serif;
-        -webkit-font-smoothing: antialiased;
-        margin: 0;
-        padding: 0;
         width: 100%;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        background-color: #f8fafc; /* 恢復 bg-slate-50 */
-      }
-
-      /* 確保最底部的 section 真正貼齊容器 */
-      #contact {
-        margin-bottom: 0 !important;
-        display: block;
-      }
-      body {
+        background-color: #f8fafc;
         font-family: "Inter", sans-serif;
         -webkit-font-smoothing: antialiased;
       }
       .glass {
-        background: rgba(255, 255, 255, 0.7);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
       }
-      /* 漸層文字效果 */
       .text-gradient {
         background: linear-gradient(to bottom, #26d4f3, #428fc8);
         -webkit-background-clip: text;
@@ -60,309 +34,173 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      
+      #mobile-menu {
+        transition: all 0.3s ease-in-out;
+        max-height: 0;
+        overflow: hidden;
+      }
+      #mobile-menu.open {
+        max-height: 450px;
+        border-bottom: 1px solid #e2e8f0;
+      }
     </style>
   </head>
-  <body
-    class="bg-slate-50 text-slate-900 leading-relaxed overflow-x-hidden flex flex-col min-h-screen"
-  >
+  <body class="text-slate-900 leading-relaxed flex flex-col min-h-screen">
+    
     <nav class="fixed top-0 w-full z-50 glass border-b border-slate-200">
-      <div
-        class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between"
-      >
-        <a
-          href="#"
-          class="font-extrabold text-xl text-gradient-stitle tracking-tighter hover:opacity-70 transition -ml-6"
-          >LEWIS　PORTFOLIO.</a
-        >
+      <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+        <a href="#" class="font-extrabold text-xl text-gradient-stitle tracking-tighter">LEWIS PORTFOLIO.</a>
+        
         <div class="hidden md:flex gap-8 text-sm font-bold text-sky-500">
           <a href="#about" class="hover:text-blue-600 transition">關於我</a>
-          <a href="#career-timeline" class="hover:text-blue-600 transition"
-            >職涯旅程</a
-          >
-          <a href="#projects" class="hover:text-blue-600 transition"
-            >亮點專案</a
-          >
-
-          <a href="#certifications" class="hover:text-blue-600 transition"
-            >專業證照</a
-          >
+          <a href="#career-timeline" class="hover:text-blue-600 transition">職涯旅程</a>
+          <a href="#projects" class="hover:text-blue-600 transition">亮點專案</a>
+          <a href="#certifications" class="hover:text-blue-600 transition">專業證照</a>
           <a href="#grow" class="hover:text-blue-600 transition">自主進修</a>
           <a href="#contact" class="hover:text-blue-600 transition">聯絡方式</a>
         </div>
+
+        <button id="menu-toggle" class="md:hidden p-2 text-sky-600">
+          <i data-lucide="menu" id="menu-icon"></i>
+        </button>
+      </div>
+
+      <div id="mobile-menu" class="md:hidden bg-white/95 px-6 flex flex-col">
+        <a href="#about" class="mobile-link py-4 border-b border-slate-50 font-bold text-sky-500">關於我</a>
+        <a href="#career-timeline" class="mobile-link py-4 border-b border-slate-50 font-bold text-sky-500">職涯旅程</a>
+        <a href="#projects" class="mobile-link py-4 border-b border-slate-50 font-bold text-sky-500">亮點專案</a>
+        <a href="#certifications" class="mobile-link py-4 border-b border-slate-50 font-bold text-sky-500">專業證照</a>
+        <a href="#grow" class="mobile-link py-4 border-b border-slate-50 font-bold text-sky-500">自主進修</a>
+        <a href="#contact" class="mobile-link py-4 font-bold text-sky-500">聯絡方式</a>
       </div>
     </nav>
-    <main class="max-w-6xl mx-auto px-6 flex-grow">
-      <section
-        id="about"
-        class="pt-32 pb-20 md:pt-48 md:pb-20 flex flex-col md:flex-row items-center md:items-start text-center md:text-left"
-      >
-        <div class="myHeadPhoto flex flex-col items-center shrink-0">
-          <div
-            class="w-40 h-40 md:w-48 md:h-48 shrink-0 rounded-full overflow-hidden mb-5 relative"
-          >
-            <img
-              src="myHead.jpg"
-              class="w-full h-full object-cover aspect-square scale-[1.3] -translate-y-3"
-            />
+
+    <main class="w-full max-w-6xl mx-auto px-6 flex-grow">
+      <section id="about" class="pt-32 pb-20 md:pt-48 flex flex-col md:flex-row items-center md:items-start text-center md:text-left">
+        <div class="flex flex-col items-center shrink-0">
+          <div class="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden mb-5 border-4 border-white shadow-xl relative">
+            <img src="myHead.jpg" class="w-full h-full object-cover scale-[1.3] -translate-y-3" />
           </div>
-          <img
-            src="mySign.png"
-            class="w-32 h-16 md:w-48 md:h-24 shrink-0 object-contain"
-          />
+          <img src="mySign.png" class="w-32 h-16 md:w-48 md:h-24 object-contain" />
         </div>
         <div class="max-w-3xl md:ml-12 mt-10 md:mt-0">
-          <h2
-            class="text-gradient-stitle font-semibold tracking-widest uppercase text-sm mb-4"
-          >
-            ＡＢＯＵＴ　 ＭＥ
-          </h2>
-          <h1 class="text-4xl md:text-4xl font-extrabold tracking-tight mb-3">
-            藝術 × 科技
-          </h1>
+          <h2 class="text-gradient-stitle font-semibold tracking-widest uppercase text-sm mb-4">ＡＢＯＵＴ ＭＥ</h2>
+          <h1 class="text-4xl md:text-4xl font-extrabold tracking-tight mb-3">藝術 × 科技</h1>
           <h1 class="text-4xl md:text-4xl font-extrabold tracking-tight">
             <span class="text-gradient text-5xl md:text-6xl">專案管理師</span>
           </h1>
           <div class="mt-8 text-slate-700 space-y-3 px-2 md:px-0 text-left">
             <p>我是賴家祥，30歲，高雄人。</p>
-            <p>
-              畢業於國立臺灣戲曲學院劇場藝術學系，畢業後加入舞台劇劇團。擁有豐富的政府採購標案與補助企劃經驗，熟悉文化產業運作，能整合資源並從多面向強化專案內容。
-            </p>
-            <p>
-              2023 年成功取得「永安藝文館」維運權並擔任館長，帶領 5 個營運單位與
-              5
-              個進駐團隊，完成特色定位、跨界合作與戲劇教育推廣，強化團隊管理與協作能力。
-            </p>
-            <p>
-              此外，我完成國泰金控 Java 人培訓班，學習Java、SQL、Spring
-              Boot、Vue
-              等技術；於結訓專題中負責前後端整合、資料庫設計與功能開發，熟悉系統開發流程。
-              期待結合企劃與程式開發能力，為貴公司帶來創新的專案成果。
-            </p>
+            <p>畢業於國立臺灣戲曲學院劇場藝術學系，畢業後加入舞台劇劇團。擁有豐富的政府採購標案與補助企劃經驗，熟悉文化產業運作，能整合資源並從多面向強化專案內容。</p>
+            <p>2023 年成功取得「永安藝文館」維運權並擔任館長，帶領 5 個營運單位與 5 個進駐團隊，完成特色定位、跨界合作與戲劇教育推廣，強化團隊管理與協作能力。</p>
+            <p>此外，我完成國泰金控 Java 人培訓班，學習 Java、SQL、Spring Boot、Vue 等技術；於結訓專題中負責前後端整合、資料庫設計與功能開發，熟悉系統開發流程。期待結合企劃與程式開發能力，為貴公司帶來創新的專案成果。</p>
           </div>
         </div>
       </section>
-      <section
-        id="career-timeline"
-        class="max-w-6xl mx-auto py-20 px-6 md:px-10"
-      >
-        <h2
-          class="text-gradient-stitle font-semibold tracking-widest uppercase text-sm mb-12 text-center"
-        >
-          ＣＡＲＥＥＲ　 ＴＩＭＥＬＩＮＥ
-        </h2>
-        <div class="relative overflow-x-auto pb-8">
-          <div class="min-w-[800px] relative">
-            <div class="absolute top-3 left-0 w-full h-1 bg-sky-200"></div>
-            <div
-              id="timeline-container"
-              class="relative flex justify-between items-start gap-8"
-            ></div>
+
+      <section id="career-timeline" class="py-20">
+        <h2 class="text-gradient-stitle font-semibold tracking-widest uppercase text-sm mb-12 text-center">ＣＡＲＥＥＲ ＴＩＭＥＬＩＮＥ</h2>
+        <div class="relative overflow-x-auto no-scrollbar pb-8 -mx-6 px-6">
+          <div class="min-w-[800px] relative pt-6">
+            <div class="absolute top-[34px] left-0 w-full h-1 bg-sky-200"></div>
+            <div id="timeline-container" class="relative flex justify-between items-start gap-8"></div>
           </div>
         </div>
       </section>
-      <section id="projects" class="py-20">
-        <div class="max-w-6xl mx-auto px-6 md:px-10 relative">
+
+      <section id="projects" class="py-20 relative">
+        <div class="max-w-6xl mx-auto px-2 md:px-0">
           <div class="flex flex-col md:flex-row items-center gap-10 md:gap-16">
-            <div
-              class="w-full md:w-1/2 shrink-0 overflow-hidden rounded-2xl shadow-xl aspect-video bg-gray-200"
-            >
-              <img
-                id="project-img"
-                src=""
-                class="w-full h-full object-cover transition-opacity duration-500"
-                alt="Project Image"
-              />
+            <div class="w-full md:w-1/2 overflow-hidden rounded-2xl shadow-xl aspect-video bg-gray-200">
+              <img id="project-img" src="" class="w-full h-full object-cover transition-opacity duration-500" />
             </div>
 
-            <div class="flex-1 min-w-0 space-y-6 text-center md:text-left">
-              <h2
-                class="text-gradient-stitle font-semibold tracking-widest uppercase text-sm"
-              >
-                ＰＲＯＪＥＣＴＳ
-              </h2>
-              <div id="project-title" class="text-3xl md:text-4xl">
-                <div
-                  class="flex items-center justify-center md:justify-start gap-2"
-                >
-                  <span
-                    id="project-title-text"
-                    class="font-black break-words text-slate-800 leading-tight"
-                  ></span>
-                  <a
-                    id="project-link"
-                    href=""
-                    target="_blank"
-                    class="shrink-0 p-1.5 rounded-full hover:text-sky-500 text-gray-500 transition-colors"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke-width="2"
-                      stroke="currentColor"
-                      class="size-5"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
-                      />
-                    </svg>
+            <div class="flex-1 space-y-6 text-center md:text-left">
+              <h2 class="text-gradient-stitle font-semibold tracking-widest uppercase text-sm">ＰＲＯＪＥＣＴＳ</h2>
+              <div id="project-title" class="space-y-4">
+                <div class="flex items-center justify-center md:justify-start gap-3">
+                  <span id="project-title-text" class="text-3xl md:text-4xl font-black text-slate-800 leading-tight"></span>
+                  <a id="project-link" href="" target="_blank" class="text-gray-400 hover:text-sky-500 transition-colors">
+                    <i data-lucide="external-link" class="size-6"></i>
                   </a>
                 </div>
-                <hr
-                  class="w-16 mx-auto md:mx-0 h-1 mt-5 rounded bg-slate-200"
-                />
-                <span
-                  id="project-role"
-                  class="text-xl md:text-2xl text-gray-700 block mt-4"
-                ></span>
-                <div
-                  id="project-tags"
-                  class="flex flex-wrap justify-center md:justify-start gap-3 mt-6"
-                ></div>
+                <hr class="w-16 mx-auto md:mx-0 h-1 bg-slate-200 rounded" />
+                <span id="project-role" class="text-xl md:text-2xl text-slate-700 block mt-4"></span>
+                <div id="project-tags" class="flex flex-wrap justify-center md:justify-start gap-3 mt-6"></div>
               </div>
             </div>
           </div>
 
-          <button
-            onclick="prevProject()"
-            class="absolute left-2 md:-left-12 top-[20%] md:top-1/2 -translate-y-1/2 z-30 p-2.5 rounded-full bg-white shadow-lg border border-slate-100 hover:bg-sky-500 hover:text-white text-gray-500 transition-all active:scale-90"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
-          </button>
+          <div class="flex md:hidden justify-center gap-10 mt-8">
+            <button onclick="prevProject()" class="p-4 bg-white shadow-md rounded-full text-sky-500 active:scale-90"><i data-lucide="chevron-left"></i></button>
+            <button onclick="nextProject()" class="p-4 bg-white shadow-md rounded-full text-sky-500 active:scale-90"><i data-lucide="chevron-right"></i></button>
+          </div>
+          <button onclick="prevProject()" class="hidden md:flex absolute -left-16 top-1/2 p-3 bg-white shadow-lg rounded-full hover:bg-sky-500 hover:text-white transition-all"><i data-lucide="chevron-left"></i></button>
+          <button onclick="nextProject()" class="hidden md:flex absolute -right-16 top-1/2 p-3 bg-white shadow-lg rounded-full hover:bg-sky-500 hover:text-white transition-all"><i data-lucide="chevron-right"></i></button>
 
-          <button
-            onclick="nextProject()"
-            class="absolute right-2 md:-right-12 top-[20%] md:top-1/2 -translate-y-1/2 z-30 p-2.5 rounded-full bg-white shadow-lg border border-slate-100 hover:bg-sky-500 hover:text-white text-gray-500 transition-all active:scale-90"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-          </button>
-
-          <div
-            class="mt-12 md:mt-8 bg-white/100 p-6 md:p-8 rounded-xl border border-white/60"
-          >
-            <p
-              id="project-desc"
-              class="text-slate-600 leading-relaxed text-base"
-            ></p>
+          <div class="mt-12 p-6 md:p-10 bg-white rounded-2xl border border-white/60 shadow-sm">
+            <p id="project-desc" class="text-slate-600 leading-relaxed text-base text-left"></p>
           </div>
         </div>
       </section>
 
-      <section id="certifications" class="max-w-6xl mx-auto py-20 px-10">
-        <h2
-          class="text-gradient-stitle font-semibold tracking-widest uppercase text-sm mb-12 text-center"
-        >
-          ＣＥＲＴＩＦＩＣＡＴＩＯＮＳ
-        </h2>
-
-        <div
-          id="cert-container"
-          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4"
-        ></div>
+      <section id="certifications" class="py-20">
+        <h2 class="text-gradient-stitle font-semibold tracking-widest uppercase text-sm mb-12 text-center">ＣＥＲＴＩＦＩＣＡＴＩＯＮＳ</h2>
+        <div id="cert-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4"></div>
       </section>
-      <section id="grow" class="max-w-6xl mx-auto py-20 px-10 pb-20">
-        <h2
-          class="text-gradient-stitle font-semibold tracking-widest uppercase text-sm mb-12 text-center"
-        >
-          ＳＥＬＦ-ＬＥＡＲＮＩＮＧ
-        </h2>
 
+      <section id="grow" class="py-20 pb-32">
+        <h2 class="text-gradient-stitle font-semibold tracking-widest uppercase text-sm mb-12 text-center">ＳＥＬＦ-ＬＥＡＲＮＩＮＧ</h2>
         <div id="grow-container" class="space-y-8"></div>
       </section>
-      <div class="my-20"></div>
-      <style>
-        #cert-container::-webkit-scrollbar {
-          display: none;
-        }
-      </style>
     </main>
-    <section
-      id="contact"
-      class="bg-sky-500 pt-16 pb-10 w-full text-white m-0 relative"
-    >
-      <div class="max-w-4xl mx-auto px-6 text-center">
-        <h2
-          class="font-semibold tracking-widest uppercase text-sm mb-4 opacity-80"
-        >
-          ＧＥＴ　ＩＮ　ＴＯＵＣＨ
-        </h2>
-        <h3
-          class="text-3xl md:text-5xl font-black mb-10 tracking-tight leading-tight"
-        >
-          期待與您共同打造<br />創新的文化體驗
-        </h3>
 
-        <div
-          class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10 max-w-2xl mx-auto"
-        >
-          <a
-            href="mailto:putonea1216@gmail.com"
-            class="group flex flex-col items-center p-8 rounded-3xl bg-white/10 hover:bg-white/20 transition-all border border-white/10"
-          >
-            <div
-              class="mb-4 p-4 bg-white rounded-full text-sky-500 group-hover:scale-110 transition-transform shadow-lg"
-            >
-              <i data-lucide="mail" class="w-6 h-6"></i>
-            </div>
-            <span class="text-xs opacity-70 uppercase tracking-widest mb-2"
-              >Email</span
-            >
+    <section id="contact" class="bg-sky-500 pt-16 pb-10 w-full text-white">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <h2 class="font-semibold tracking-widest uppercase text-sm mb-4 opacity-80">ＧＥＴ ＩＮ ＴＯＵＣＨ</h2>
+        <h3 class="text-3xl md:text-5xl font-black mb-10 tracking-tight leading-tight">期待與您共同打造<br />創新的文化體驗</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10 max-w-2xl mx-auto">
+          <a href="mailto:putonea1216@gmail.com" class="p-8 rounded-3xl bg-white/10 hover:bg-white/20 transition-all border border-white/10 flex flex-col items-center">
+            <div class="mb-4 p-4 bg-white rounded-full text-sky-500 shadow-lg"><i data-lucide="mail" class="w-6 h-6"></i></div>
+            <span class="text-xs opacity-70 uppercase tracking-widest mb-2">Email</span>
             <span class="font-bold text-lg">putonea1216@gmail.com</span>
           </a>
-
-          <div
-            class="group flex flex-col items-center p-8 rounded-3xl bg-white/10 border border-white/10"
-          >
-            <div class="mb-4 p-4 bg-white rounded-full text-sky-500 shadow-lg">
-              <i data-lucide="map-pin" class="w-6 h-6"></i>
-            </div>
-            <span class="text-xs opacity-70 uppercase tracking-widest mb-2"
-              >Location</span
-            >
+          <div class="p-8 rounded-3xl bg-white/10 border border-white/10 flex flex-col items-center">
+            <div class="mb-4 p-4 bg-white rounded-full text-sky-500 shadow-lg"><i data-lucide="map-pin" class="w-6 h-6"></i></div>
+            <span class="text-xs opacity-70 uppercase tracking-widest mb-2">Location</span>
             <span class="font-bold text-lg">臺北市 / 新北市</span>
           </div>
         </div>
-
-        <div
-          class="pt-10 border-t border-white/20 opacity-40 text-xs tracking-widest"
-        >
+        <div class="pt-10 border-t border-white/20 opacity-40 text-xs tracking-widest uppercase">
           <p>© 2026 LEWIS PORTFOLIO. ALL RIGHTS RESERVED.</p>
         </div>
       </div>
     </section>
+
     <script>
-      // 1. 建立專案資料陣列 (Object Array)
+      // 手機選單開關
+      const menuToggle = document.getElementById('menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const menuIcon = document.getElementById('menu-icon');
+      menuToggle.addEventListener('click', () => {
+        const isOpen = mobileMenu.classList.toggle('open');
+        menuIcon.setAttribute('data-lucide', isOpen ? 'x' : 'menu');
+        lucide.createIcons();
+      });
+      document.querySelectorAll('.mobile-link').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.remove('open');
+          menuIcon.setAttribute('data-lucide', 'menu');
+          lucide.createIcons();
+        });
+      });
+
+      // 專案資料 (完整原文恢復)
       const projectData = [
         {
-          id: 0,
           title: "故事工廠<br>永安藝文館",
           role: "2023-2024 ｜ 館長",
           img: "yaac.png",
@@ -370,10 +208,9 @@
           desc: "永安藝文館坐落於文山區木新路，是一處結合表演藝術、美學教育與社區生活的公共美學空間。我曾主導該館的標案企劃並順利得標，在受任館長期間帶領 5 人核心團隊，不僅負責場館的品牌定位與預算控管，更深耕「藝術融入生活」的核心價值。我成功媒合 5 組專業藝文團隊進駐，將馬戲、舞蹈與戲劇元素轉譯為深度的文化產品，並主動走出館舍，串聯社區、養老院及幼兒園。這段經歷讓我學會將抽象的藝術概念，轉化為具備「動態體驗」特色的講座，如肌肉放鬆技巧或親子互動課程，讓大眾在實作中感受藝術價值。這段館長資歷不僅展現了我從零到一的「產品開發力」，能精準洞察社區需求並將資源變現；更鍛鍊了我的「資源整合力」，在面對公部門、進駐團體與居民等多方利害關係人時，能透過有效的溝通協作達成專案目標。我證明了自己具備將場館願景落實為具體經營成果的商業思維與執行韌性。",
           tagColor: "bg-sky-100 text-sky-500",
           titleColor: "text-sky-500",
-          href: "https://yaac.com.tw/",
+          href: "https://yaac.com.tw/"
         },
         {
-          id: 1,
           title: "臺東縣藝文中心<br>劇場人才培育計畫",
           role: "2017-2023 ｜ 輔導員<br>2020-2021 ｜ 專案企劃暨執行<br>2022-2023 ｜ 協同計畫主持人",
           img: "taitungJunior.png",
@@ -381,10 +218,9 @@
           desc: "自 2017 年起，故事工廠連續 9 年承辦臺東縣文化處「劇場人才培育計畫」，旨在縮減城鄉藝文差距，為東台灣建立專業的劇場教育體系。身為協同計畫主持人，我致力於將這項一年一標的政府採購案，轉化為具備長遠影響力的「人才孵化器」。計畫核心採取「分階培育」策略：從引發興趣的「青少年戲劇營」，到深耕專業的「舞台技術與編劇工作坊」，並搭配「縣外藝文觀摩」拓展學員視野。透過系統化的課程設計，我們成功打破技術門檻，讓在地學員能進入專業場域操作燈光、音響與舞台實務，活化台東藝文中心場館機能。這項專案體現了我的「資源整合」與「長期維運」能力。我不僅負責標案企劃與預算控管，更透過串聯中央補助與地方資源，建構出一條從國小至大學畢業的戲劇教育循環鏈。透過長期深耕，我們不僅為臺東培育了具即戰力的劇場新血，更讓藝術轉譯為生活實戰力，實踐文化平權的最終目標。",
           titleColor: "text-amber-600",
           tagColor: "bg-amber-100 text-amber-600",
-          href: "https://storyworks.com.tw/site/works_list?id=697",
+          href: "https://storyworks.com.tw/site/works_list?id=697"
         },
         {
-          id: 2,
           title: "媒合演藝團隊<br>進駐演藝場所計畫",
           role: "2020-2021 ｜ 專案企劃暨執行<br>2022-2023 ｜ 協同計畫主持人",
           img: "taitungKids.png",
@@ -392,10 +228,9 @@
           desc: "自2020至今，已連續辦理多年，其計畫內容包含兒童劇場戲劇營隊、研習工作坊、偏鄉戲劇教育推廣（講座或體驗營隊），我們爭取此補助計畫，期望串聯臺東標案，將戲劇教育的學習路程鋪設完善，讓臺東的學子能在４年級開始，透過補助參與兒童營隊，國小畢業即能銜接政府標案的青少年營隊，青少年招收對象一路到大學畢業，再透過補助之研習工作坊，進行不同專業領域與戲劇的結合，最後到臺東各地進行戲劇教育推廣，刺激國小同學們對戲劇的興趣與啟發。打造完善的戲劇教育循環鏈，讓不同的專業與戲劇結合，也更能展現表演藝術的多元及包容性。",
           titleColor: "text-emerald-600",
           tagColor: "bg-emerald-100 text-emerald-600",
-          href: "https://storyworks.com.tw/site/works_list?id=88",
+          href: "https://storyworks.com.tw/site/works_list?id=88"
         },
         {
-          id: 3,
           title: "文化部扶植<br>青年藝術發展計畫",
           role: "2022-2024 ｜ 專案統籌",
           img: "grow.png",
@@ -403,239 +238,102 @@
           desc: "其計畫內容包含編劇工作坊、表演工作坊、演出實戰，編劇工作坊對象為年齡35歲以下且對故事創作具熱忱者，並以實體與線上雙模式同步進行半年的劇本創作，創作目的為30分鐘之戲劇；而表演工作坊對象則與雙北市高中以上並設有表演藝術類之學校（華岡藝校、泰北高中、南強工商等），透過資料審核、實體徵選完成學員名單後，完成7天連續的戲劇課程，以讀劇模式進行實際公開演出。",
           titleColor: "text-rose-600",
           tagColor: "bg-rose-100 text-rose-600",
-          href: "https://storyworks.com.tw/site/works_list?id=89",
-        },
+          href: "https://storyworks.com.tw/site/works_list?id=89"
+        }
       ];
 
       let currentIndex = 0;
-
-      // 2. 更新畫面的函式
       function renderProject(index) {
         const data = projectData[index];
-
-        // 更新文字內容
         document.getElementById("project-img").src = data.img;
-        document.getElementById("project-title-text").innerHTML = data.title;
-        const titleText = document.getElementById("project-title-text");
-        titleText.innerHTML = data.title;
-
-        // 先移除舊的顏色類別，再加入新的
-        // 注意：假設您的 data 裡有 titleColor 這個欄位，例如 "text-sky-500"
-        titleText.className = `font-black break-words ${
-          data.titleColor || "text-sky-500"
-        }`;
+        const titleEl = document.getElementById("project-title-text");
+        titleEl.innerHTML = data.title;
+        titleEl.className = `text-3xl md:text-4xl font-black leading-tight ${data.titleColor || "text-slate-800"}`;
         document.getElementById("project-role").innerHTML = data.role;
         document.getElementById("project-desc").innerText = data.desc;
-        const linkElement = document.getElementById("project-link");
-        if (linkElement) {
-          linkElement.href = data.href;
-        }
-
-        // 更新標籤 (清除舊標籤並加入新標籤)
-        const tagContainer = document.getElementById("project-tags");
-        tagContainer.innerHTML = data.tags
-          .map(
-            (tag) => `
-    <span class="px-4 py-1.5 ${data.tagColor} rounded-lg text-sm font-semibold">
-      ${tag}
-    </span>
-  `
-          )
-          .join("");
+        document.getElementById("project-link").href = data.href;
+        document.getElementById("project-tags").innerHTML = data.tags.map(t => `<span class="px-4 py-1.5 ${data.tagColor} rounded-lg text-sm font-semibold">${t}</span>`).join("");
       }
 
-      // 3. 控制按鈕
-      function nextProject() {
-        currentIndex = (currentIndex + 1) % projectData.length;
-        renderProject(currentIndex);
+      function nextProject() { currentIndex = (currentIndex + 1) % projectData.length; renderProject(currentIndex); }
+      function prevProject() { currentIndex = (currentIndex - 1 + projectData.length) % projectData.length; renderProject(currentIndex); }
+
+      // 職涯資料
+      const careerData = [
+        { period: "2014 - 2018", title: "國立臺灣戲曲學院", tags: ["劇場藝術學系", "畢業"] },
+        { period: "2019 - 2020", title: "故事工廠", tags: ["執行製作"] },
+        { period: "2020 - 2023", title: "故事工廠", tags: ["專案統籌"] },
+        { period: "2023 - 2024", title: "永安藝文館", tags: ["館長"] },
+        { period: "2025", title: "國泰JAVA培訓班", tags: ["結業"] }
+      ];
+
+      function renderTimeline() {
+        document.getElementById("timeline-container").innerHTML = careerData.map(item => `
+          <div class="flex-1 relative pt-10">
+            <div class="absolute top-[2px] left-0 w-6 h-6 bg-white border-4 border-sky-500 rounded-full z-10"></div>
+            <time class="text-sm font-bold text-sky-600">${item.period}</time>
+            <h3 class="text-xl font-black text-gray-800 leading-tight mt-1">${item.title}</h3>
+            <div class="flex flex-wrap gap-2 mt-3">
+              ${item.tags.map(t => `<span class="px-2 bg-sky-50 text-sky-600 text-[13px] rounded font-semibold">${t}</span>`).join("")}
+            </div>
+          </div>
+        `).join("");
       }
 
-      function prevProject() {
-        currentIndex =
-          (currentIndex - 1 + projectData.length) % projectData.length;
-        renderProject(currentIndex);
+      // 證照與進修
+      const certData = [
+        { name: "Adobe Certified Associate", org: "Certiport", year: "2018", img: "adobecert.png" },
+        { name: "Google Analytics", org: "Google Enterprise", year: "2025", img: "googleGA4.png" },
+        { name: "GoogleAds多媒體廣告認證", org: "Google Enterprise", year: "2025", img: "googleAdsMedia.png" },
+        { name: "SSE Word 2016", org: "Silicon Stone Education", year: "2018", img: "SSEWord2016.png" }
+      ];
+      function renderCerts() {
+        document.getElementById("cert-container").innerHTML = certData.map(cert => `
+          <div class="group bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-xl transition-all duration-300">
+            <div class="aspect-[4/3] bg-slate-200 overflow-hidden">
+              <img src="${cert.img}" alt="${cert.name}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+            </div>
+            <div class="p-6">
+              <span class="text-[10px] bg-sky-100 text-sky-600 px-2 py-1 rounded-md font-bold mb-2 inline-block">${cert.year}</span>
+              <h3 class="font-black text-lg text-slate-600 leading-tight mb-1 h-12 line-clamp-2">${cert.name}</h3>
+              <p class="text-slate-500 text-xs font-medium">${cert.org}</p>
+              <div class="mt-4 w-8 h-1 bg-sky-500 rounded-full group-hover:w-full transition-all duration-500"></div>
+            </div>
+          </div>
+        `).join("");
+      }
+
+      const growData = [{
+        title: "國泰金控 Java 人才培訓班",
+        org: "國泰金控",
+        desc: "國泰 Java 培訓班結訓。專題開發「程式學習平台」，具備三方權限與即時代碼回饋。運用 Spring Boot、Vue 及 SQL 進行前後端串接與資料庫設計，掌握完整開發流程與需求分析。",
+        tags: ["Java", "Spring Boot", "SQL", "VUE"],
+        img: "cathaycert.png"
+      }];
+      function renderGrow() {
+        document.getElementById("grow-container").innerHTML = growData.map(item => `
+          <div class="group flex flex-col md:flex-row bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-md transition-all">
+            <div class="md:w-1/3 aspect-video md:aspect-auto overflow-hidden">
+              <img src="${item.img}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            </div>
+            <div class="flex-1 p-8 flex flex-col justify-center text-left">
+              <div class="flex justify-between items-start mb-2">
+                <h3 class="text-2xl font-black text-slate-600">${item.title}</h3>
+                <span class="text-sm font-bold text-sky-500 bg-sky-50 px-3 py-1 rounded-full">${item.org}</span>
+              </div>
+              <p class="text-slate-600 mb-6 leading-relaxed">${item.desc}</p>
+              <div class="flex flex-wrap gap-2">
+                ${item.tags.map(t => `<span class="text-xs font-semibold px-2 py-1 bg-slate-100 text-slate-500 rounded">${t}</span>`).join("")}
+              </div>
+            </div>
+          </div>
+        `).join("");
       }
 
       // 初始化
       renderProject(0);
-      const careerData = [
-        {
-          period: "2014 - 2018",
-          title: "國立臺灣戲曲學院",
-          tags: ["劇場藝術學系", "畢業"],
-        },
-        {
-          period: "2019 - 2020",
-          title: "故事工廠",
-          tags: ["執行製作"],
-        },
-
-        {
-          period: "2020 - 2023",
-          title: "故事工廠",
-          tags: ["專案統籌"],
-        },
-        {
-          period: "2023 - 2024",
-          title: "永安藝文館",
-          tags: ["館長"],
-        },
-        {
-          period: "2025",
-          title: "國泰JAVA培訓班",
-          tags: ["結業"],
-        },
-      ];
-
-      function renderTimeline() {
-        const container = document.getElementById("timeline-container");
-
-        const timelineHTML = careerData
-          .map(
-            (item) => `
-    <div class="flex-1 relative pt-10">
-      <div class="absolute top-[-2px] left-0 w-6 h-6 bg-white border-4 border-sky-500 rounded-full z-10"></div>
-      
-      <div class="space-y-3">
-        <time class="text-sm font-bold text-sky-600">${item.period}</time>
-         <h3 class="text-xl font-black text-gray-800 leading-tight">${
-           item.title
-         }</h3>
-        
-        
-        <div class="flex flex-wrap gap-2 items-center">
-           
-          ${item.tags
-            .map(
-              (tag) => `
-            <span class="px-2 bg-sky-50 text-sky-600 text-[13px] rounded font-semibold -ml-2 ">${tag}</span>
-          `
-            )
-            .join("")}
-        </div>
-      </div>
-    </div>
-  `
-          )
-          .join("");
-
-        container.innerHTML = timelineHTML;
-      }
-
       renderTimeline();
-
-      const certData = [
-        {
-          name: "Adobe Certified Associate",
-          org: "Certiport",
-          year: "2018",
-          img: "adobecert.png",
-        },
-        {
-          name: "Google Analytics",
-          org: "Google Enterprise",
-          year: "2025",
-          img: "googleGA4.png",
-        },
-        {
-          name: "GoogleAds多媒體廣告認證",
-          org: "Google Enterprise",
-          year: "2025",
-          img: "googleAdsMedia.png",
-        },
-        {
-          name: "SSE Word 2016",
-          org: "Silicon Stone Education",
-          year: "2018",
-          img: "SSEWord2016.png",
-        },
-      ];
-
-      function renderCerts() {
-        const container = document.getElementById("cert-container");
-        if (!container) return;
-
-        const certHTML = certData
-          .map(
-            (cert) => `
-    <div class="group bg-white rounded-1xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-      <div class="aspect-[4/3] bg-slate-200 overflow-hidden">
-        <img 
-          src="${cert.img}" 
-          alt="${cert.name}" 
-          class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-        />
-      </div>
-      
-      <div class="p-6">
-        <span class="text-[10px] bg-sky-100 text-sky-600 px-2 py-1 rounded-md font-bold mb-2 inline-block">${cert.year}</span>
-        <h3 class="font-black text-lg text-slate-600 leading-tight mb-1 h-12 line-clamp-2">${cert.name}</h3>
-        <p class="text-slate-500 text-xs font-medium">${cert.org}</p>
-        
-        <div class="mt-4 w-8 h-1 bg-sky-500 rounded-full group-hover:w-full transition-all duration-500"></div>
-      </div>
-    </div>
-  `
-          )
-          .join("");
-
-        container.innerHTML = certHTML;
-      }
-
       renderCerts();
-
-      const growData = [
-        {
-          title: "國泰金控 Java 人才培訓班",
-          org: "國泰金控",
-          desc: "國泰 Java 培訓班結訓。專題開發「程式學習平台」，具備三方權限與即時代碼回饋。運用 Spring Boot、Vue 及 SQL 進行前後端串接與資料庫設計，掌握完整開發流程與需求分析。",
-          tags: ["Java", "Spring Boot", "SQL", "VUE"],
-          img: "cathaycert.png",
-        },
-      ];
-
-      function renderGrow() {
-        const container = document.getElementById("grow-container");
-        if (!container) return;
-
-        const growHTML = growData
-          .map(
-            (item) => `
-    <div class="group flex flex-col md:flex-row bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-md transition-all">
-      <div class="md:w-1/3 aspect-video md:aspect-auto overflow-hidden">
-        <img src="${
-          item.img
-        }" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-      </div>
-      
-      <div class="flex-1 p-8 flex flex-col justify-center">
-        <div class="flex justify-between items-start mb-2">
-          <h3 class="text-2xl font-black text-slate-600">${item.title}</h3>
-          <span class="text-sm font-bold text-sky-500 bg-sky-50 px-3 py-1 rounded-full">${
-            item.org
-          }</span>
-        </div>
-        <p class="text-slate-600 mb-6 leading-relaxed">${item.desc}</p>
-        
-        <div class="flex flex-wrap gap-2">
-          ${item.tags
-            .map(
-              (tag) => `
-            <span class="text-xs font-semibold px-2 py-1 bg-slate-100 text-slate-500 rounded">${tag}</span>
-          `
-            )
-            .join("")}
-        </div>
-      </div>
-    </div>
-  `
-          )
-          .join("");
-
-        container.innerHTML = growHTML;
-      }
-
-      // 記得在初始化區塊呼叫它
       renderGrow();
       lucide.createIcons();
     </script>
