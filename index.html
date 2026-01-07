@@ -94,77 +94,144 @@
     <main class="max-w-6xl mx-auto px-6 flex-grow">
       <section
         id="about"
-        class="pt-32 pb-20 md:pt-48 md:pb-20 flex items-start"
+        class="pt-32 pb-20 md:pt-48 md:pb-20 flex flex-col md:flex-row items-center md:items-start text-center md:text-left"
       >
         <div class="myHeadPhoto flex flex-col items-center shrink-0">
           <div
-            class="w-48 h-48 shrink-0 rounded-full overflow-hidden mb-5 relative"
+            class="w-40 h-40 md:w-48 md:h-48 shrink-0 rounded-full overflow-hidden mb-5 relative"
           >
             <img
               src="myHead.jpg"
-              class="w-full h-full object-cover aspect-square scale-[1.3] -translate-y-3 transition-transform duration-300"
+              class="w-full h-full object-cover aspect-square scale-[1.3] -translate-y-3"
             />
           </div>
           <img
             src="mySign.png"
-            class="w-48 h-24 shrink-0 object-cover aspect-square"
+            class="w-32 h-16 md:w-48 md:h-24 shrink-0 object-contain"
           />
         </div>
-        <div class="max-w-3xl ml-12">
+        <div class="max-w-3xl md:ml-12 mt-10 md:mt-0">
           <h2
             class="text-gradient-stitle font-semibold tracking-widest uppercase text-sm mb-4"
           >
             ＡＢＯＵＴ　 ＭＥ
           </h2>
-          <h1 class="text-5xl md:text-4xl font-extrabold tracking-tight mb-3">
+          <h1 class="text-4xl md:text-4xl font-extrabold tracking-tight mb-3">
             藝術 × 科技
           </h1>
-          <h1 class="text-5xl md:text-4xl font-extrabold tracking-tight">
+          <h1 class="text-4xl md:text-4xl font-extrabold tracking-tight">
             <span class="text-gradient text-5xl md:text-6xl">專案管理師</span>
           </h1>
-          <div
-            class="text-lg md:text-xl text-slate-600 mb-6 leading-relaxed"
-          ></div>
-          <div class="mb-3">我是賴家祥，30歲，高雄人。</div>
-          <div class="mb-3">
-            就讀國立臺灣戲曲學院劇場藝術學系期間北漂到臺北，畢業後加入舞台劇劇團。累積豐富的政府採購標案與補助企劃經驗，熟悉文化產業運作，能整合資源並從多面向強化專案內容。
-          </div>
-          <div class="mb-3">
-            2023 年成功取得「永安藝文館」維運權並擔任館長，帶領 5 個營運單位與 5
-            個進駐團隊，完成特色定位、跨界合作與戲劇教育推廣，強化團隊管理與協作能力。
-          </div>
-          <div>
-            此外，我完成國泰金控 Java 人培訓班，學習Java、SQL、Spring Boot、Vue
-            等技術；於結訓專題中負責前後端整合、資料庫設計與功能開發，熟悉系統開發流程。
-            期待結合企劃與程式開發能力，為貴公司帶來創新的專案成果。
+          <div class="mt-8 text-slate-700 space-y-3 px-2 md:px-0 text-left">
+            <p>我是賴家祥，30歲，高雄人。</p>
+            <p>
+              畢業於國立臺灣戲曲學院劇場藝術學系，畢業後加入舞台劇劇團。擁有豐富的政府採購標案與補助企劃經驗，熟悉文化產業運作，能整合資源並從多面向強化專案內容。
+            </p>
+            <p>
+              2023 年成功取得「永安藝文館」維運權並擔任館長，帶領 5 個營運單位與
+              5
+              個進駐團隊，完成特色定位、跨界合作與戲劇教育推廣，強化團隊管理與協作能力。
+            </p>
+            <p>
+              此外，我完成國泰金控 Java 人培訓班，學習Java、SQL、Spring
+              Boot、Vue
+              等技術；於結訓專題中負責前後端整合、資料庫設計與功能開發，熟悉系統開發流程。
+              期待結合企劃與程式開發能力，為貴公司帶來創新的專案成果。
+            </p>
           </div>
         </div>
       </section>
-      <section id="career-timeline" class="max-w-6xl mx-auto py-20 px-10">
+      <section
+        id="career-timeline"
+        class="max-w-6xl mx-auto py-20 px-6 md:px-10"
+      >
         <h2
           class="text-gradient-stitle font-semibold tracking-widest uppercase text-sm mb-12 text-center"
         >
           ＣＡＲＥＥＲ　 ＴＩＭＥＬＩＮＥ
         </h2>
-
-        <div class="relative">
-          <div class="absolute top-3 left-0 w-full h-1 bg-sky-200"></div>
-
-          <div
-            id="timeline-container"
-            class="relative flex justify-between items-start gap-8"
-          ></div>
+        <div class="relative overflow-x-auto pb-8">
+          <div class="min-w-[800px] relative">
+            <div class="absolute top-3 left-0 w-full h-1 bg-sky-200"></div>
+            <div
+              id="timeline-container"
+              class="relative flex justify-between items-start gap-8"
+            ></div>
+          </div>
         </div>
       </section>
-      <section id="projects" class="py-20 overflow-hidden">
-        <div class="flex items-center gap-10 scale-[1.17]">
+      <section id="projects" class="py-20">
+        <div class="max-w-6xl mx-auto px-6 md:px-10 relative">
+          <div class="flex flex-col md:flex-row items-center gap-10 md:gap-16">
+            <div
+              class="w-full md:w-1/2 shrink-0 overflow-hidden rounded-2xl shadow-xl aspect-video bg-gray-200"
+            >
+              <img
+                id="project-img"
+                src=""
+                class="w-full h-full object-cover transition-opacity duration-500"
+                alt="Project Image"
+              />
+            </div>
+
+            <div class="flex-1 min-w-0 space-y-6 text-center md:text-left">
+              <h2
+                class="text-gradient-stitle font-semibold tracking-widest uppercase text-sm"
+              >
+                ＰＲＯＪＥＣＴＳ
+              </h2>
+              <div id="project-title" class="text-3xl md:text-4xl">
+                <div
+                  class="flex items-center justify-center md:justify-start gap-2"
+                >
+                  <span
+                    id="project-title-text"
+                    class="font-black break-words text-slate-800 leading-tight"
+                  ></span>
+                  <a
+                    id="project-link"
+                    href=""
+                    target="_blank"
+                    class="shrink-0 p-1.5 rounded-full hover:text-sky-500 text-gray-500 transition-colors"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="2"
+                      stroke="currentColor"
+                      class="size-5"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+                      />
+                    </svg>
+                  </a>
+                </div>
+                <hr
+                  class="w-16 mx-auto md:mx-0 h-1 mt-5 rounded bg-slate-200"
+                />
+                <span
+                  id="project-role"
+                  class="text-xl md:text-2xl text-gray-700 block mt-4"
+                ></span>
+                <div
+                  id="project-tags"
+                  class="flex flex-wrap justify-center md:justify-start gap-3 mt-6"
+                ></div>
+              </div>
+            </div>
+          </div>
+
           <button
             onclick="prevProject()"
-            class="shrink-0 p-3 rounded-full bg-gray-200 hover:bg-sky-500 hover:text-white text-gray-600 transition-colors"
+            class="absolute left-2 md:-left-12 top-[20%] md:top-1/2 -translate-y-1/2 z-30 p-2.5 rounded-full bg-white shadow-lg border border-slate-100 hover:bg-sky-500 hover:text-white text-gray-500 transition-all active:scale-90"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="h-4 w-4"
+              class="h-5 w-5"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -178,68 +245,13 @@
             </svg>
           </button>
 
-          <div
-            class="w-1/2 shrink-0 overflow-hidden rounded-2xl shadow-xl aspect-video bg-gray-200 scale-[0.9]"
-          >
-            <img
-              id="project-img"
-              src=""
-              class="w-full h-full object-cover transition-opacity duration-500"
-              alt="Project Image"
-            />
-          </div>
-
-          <div class="flex-1 min-w-0 space-y-6 -ml-9">
-            <h2
-              class="text-gradient-stitle font-semibold tracking-widest uppercase text-sm mb-2"
-            >
-              ＰＲＯＪＥＣＴＳ
-            </h2>
-            <h2 id="project-title" class="text-4xl">
-              <div class="items-center">
-                <span
-                  id="project-title-text"
-                  class="font-black break-words"
-                ></span>
-                <a
-                  id="project-link"
-                  href=""
-                  target="_blank"
-                  class="shrink-0 p-1.5 rounded-full hover:text-sky-500 text-gray-500 transition-colors translate-y-2.5 inline-block"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="2"
-                    stroke="currentColor"
-                    class="size-4"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
-                    />
-                  </svg>
-                </a>
-              </div>
-              <hr class="w-auto h-1 mt-5 rounded" />
-              <span
-                id="project-role"
-                class="text-2xl text-gray-700 ml-1"
-              ></span>
-
-              <div id="project-tags" class="flex flex-wrap gap-3 mt-5"></div>
-            </h2>
-          </div>
-
           <button
             onclick="nextProject()"
-            class="shrink-0 p-3 rounded-full bg-gray-200 hover:bg-sky-500 hover:text-white text-gray-600 transition-colors"
+            class="absolute right-2 md:-right-12 top-[20%] md:top-1/2 -translate-y-1/2 z-30 p-2.5 rounded-full bg-white shadow-lg border border-slate-100 hover:bg-sky-500 hover:text-white text-gray-500 transition-all active:scale-90"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="h-4 w-4"
+              class="h-5 w-5"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -252,13 +264,18 @@
               />
             </svg>
           </button>
-        </div>
 
-        <div class="mt-20 mb-5 px-10">
-          <p id="project-desc"></p>
+          <div
+            class="mt-12 md:mt-8 bg-white/100 p-6 md:p-8 rounded-xl border border-white/60"
+          >
+            <p
+              id="project-desc"
+              class="text-slate-600 leading-relaxed text-base"
+            ></p>
+          </div>
         </div>
       </section>
-      
+
       <section id="certifications" class="max-w-6xl mx-auto py-20 px-10">
         <h2
           class="text-gradient-stitle font-semibold tracking-widest uppercase text-sm mb-12 text-center"
@@ -287,8 +304,11 @@
         }
       </style>
     </main>
-    <section id="contact" class="bg-sky-500 pt-16 pb-10 w-full text-white m-0 relative">
-  <div class="max-w-4xl mx-auto px-6 text-center">
+    <section
+      id="contact"
+      class="bg-sky-500 pt-16 pb-10 w-full text-white m-0 relative"
+    >
+      <div class="max-w-4xl mx-auto px-6 text-center">
         <h2
           class="font-semibold tracking-widest uppercase text-sm mb-4 opacity-80"
         >
@@ -331,9 +351,11 @@
           </div>
         </div>
 
-        <div class="pt-10 border-t border-white/20 opacity-40 text-xs tracking-widest">
-      <p>© 2026 LEWIS PORTFOLIO. ALL RIGHTS RESERVED.</p>
-    </div>
+        <div
+          class="pt-10 border-t border-white/20 opacity-40 text-xs tracking-widest"
+        >
+          <p>© 2026 LEWIS PORTFOLIO. ALL RIGHTS RESERVED.</p>
+        </div>
       </div>
     </section>
     <script>
@@ -345,7 +367,7 @@
           role: "2023-2024 ｜ 館長",
           img: "yaac.png",
           tags: ["政府標案", "場館營運", "地方整合", "團隊領導"],
-          desc: "曾主導「永安藝文館」標案企劃並順利得標，受任館長期間帶領 5 人團隊營運。我負責場館定位、預算管理與跨界資源媒合，成功引進 5 組藝文團隊進駐，將馬戲、舞蹈與戲劇元素轉化為深度體驗課程。除了館內經營，更主動深入社區與養老院、幼兒園等單位串聯，開發具備「動態體驗」特色的講座，將藝術轉譯為肌肉放鬆、親子互動等實用生活技巧。這段經歷鍛鍊了我將抽象藝術轉化為具體產品的「開發力」，以及能與多方利害關係人協作的「整合力」。",
+          desc: "永安藝文館坐落於文山區木新路，是一處結合表演藝術、美學教育與社區生活的公共美學空間。我曾主導該館的標案企劃並順利得標，在受任館長期間帶領 5 人核心團隊，不僅負責場館的品牌定位與預算控管，更深耕「藝術融入生活」的核心價值。我成功媒合 5 組專業藝文團隊進駐，將馬戲、舞蹈與戲劇元素轉譯為深度的文化產品，並主動走出館舍，串聯社區、養老院及幼兒園。這段經歷讓我學會將抽象的藝術概念，轉化為具備「動態體驗」特色的講座，如肌肉放鬆技巧或親子互動課程，讓大眾在實作中感受藝術價值。這段館長資歷不僅展現了我從零到一的「產品開發力」，能精準洞察社區需求並將資源變現；更鍛鍊了我的「資源整合力」，在面對公部門、進駐團體與居民等多方利害關係人時，能透過有效的溝通協作達成專案目標。我證明了自己具備將場館願景落實為具體經營成果的商業思維與執行韌性。",
           tagColor: "bg-sky-100 text-sky-500",
           titleColor: "text-sky-500",
           href: "https://yaac.com.tw/",
@@ -356,7 +378,7 @@
           role: "2017-2023 ｜ 輔導員<br>2020-2021 ｜ 專案企劃暨執行<br>2022-2023 ｜ 協同計畫主持人",
           img: "taitungJunior.png",
           tags: ["政府標案", "人才培育", "文化交流", "資源整合"],
-          desc: "此計畫為一年一標之臺東縣文化處採購標案，至今已連續辦理9年，除第一年為台東在地團隊得標外，後續8年都由故事工廠得標。其計畫內容包含青少年劇場戲劇營隊、劇場技能營隊（例舞台技術、編劇）、臺東文化處縣外觀摩。",
+          desc: "自 2017 年起，故事工廠連續 9 年承辦臺東縣文化處「劇場人才培育計畫」，旨在縮減城鄉藝文差距，為東台灣建立專業的劇場教育體系。身為協同計畫主持人，我致力於將這項一年一標的政府採購案，轉化為具備長遠影響力的「人才孵化器」。計畫核心採取「分階培育」策略：從引發興趣的「青少年戲劇營」，到深耕專業的「舞台技術與編劇工作坊」，並搭配「縣外藝文觀摩」拓展學員視野。透過系統化的課程設計，我們成功打破技術門檻，讓在地學員能進入專業場域操作燈光、音響與舞台實務，活化台東藝文中心場館機能。這項專案體現了我的「資源整合」與「長期維運」能力。我不僅負責標案企劃與預算控管，更透過串聯中央補助與地方資源，建構出一條從國小至大學畢業的戲劇教育循環鏈。透過長期深耕，我們不僅為臺東培育了具即戰力的劇場新血，更讓藝術轉譯為生活實戰力，實踐文化平權的最終目標。",
           titleColor: "text-amber-600",
           tagColor: "bg-amber-100 text-amber-600",
           href: "https://storyworks.com.tw/site/works_list?id=697",
