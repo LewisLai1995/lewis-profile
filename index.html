@@ -96,16 +96,16 @@
             <p>我是賴家祥，30歲，高雄人。</p>
             <p>畢業於國立臺灣戲曲學院劇場藝術學系，畢業後加入舞台劇劇團。擁有豐富的政府採購標案與補助企劃經驗，熟悉文化產業運作，能整合資源並從多面向強化專案內容。</p>
             <p>2023 年成功取得「永安藝文館」維運權並擔任館長，帶領 5 個營運單位與 5 個進駐團隊，完成特色定位、跨界合作與戲劇教育推廣，強化團隊管理與協作能力。</p>
-            <p>此外，我完成國泰金控 Java 人培訓班，學習 Java、SQL、Spring Boot、Vue 等技術；於結訓專題中負責前後端整合、資料庫設計與功能開發，熟悉系統開發流程。期待結合企劃與程式開發能力，為貴公司帶來創新的專案成果。</p>
+            <p>此外，我完成國泰金控 Java 人才培訓班，學習 Java、SQL、Spring Boot、Vue 等技術；於結訓專題中負責前後端整合、資料庫設計與功能開發，熟悉系統開發流程。期待結合企劃與程式開發能力，為貴公司帶來創新的專案成果。</p>
           </div>
         </div>
       </section>
 
       <section id="career-timeline" class="py-20">
         <h2 class="text-gradient-stitle font-semibold tracking-widest uppercase text-sm mb-12 text-center">ＣＡＲＥＥＲ ＴＩＭＥＬＩＮＥ</h2>
-        <div class="relative overflow-x-auto no-scrollbar pb-8 -mx-6 px-6">
-          <div class="min-w-[800px] relative pt-6">
-            <div class="absolute top-[34px] left-0 w-full h-1 bg-sky-200"></div>
+        <div class="relative overflow-x-auto no-scrollbar -mx-6 px-6 pb-8">
+          <div class="min-w-[900px] relative pt-6 pr-10"> 
+            <div class="absolute top-[34px] left-0 w-[calc(100%-40px)] h-1 bg-sky-200"></div>
             <div id="timeline-container" class="relative flex justify-between items-start gap-8"></div>
           </div>
         </div>
@@ -264,12 +264,13 @@
         { period: "2019 - 2020", title: "故事工廠", tags: ["執行製作"] },
         { period: "2020 - 2023", title: "故事工廠", tags: ["專案統籌"] },
         { period: "2023 - 2024", title: "永安藝文館", tags: ["館長"] },
-        { period: "2025", title: "國泰JAVA培訓班", tags: ["結業"] }
+        { period: "2025", title: "國泰金控 Java 人才培訓班", tags: ["結業"] }
       ];
 
       function renderTimeline() {
-        document.getElementById("timeline-container").innerHTML = careerData.map(item => `
-          <div class="flex-1 relative pt-10">
+        const container = document.getElementById("timeline-container");
+        container.innerHTML = careerData.map((item, index) => `
+          <div class="flex-1 relative pt-10 ${index === careerData.length - 1 ? 'pr-10' : ''}">
             <div class="absolute top-[2px] left-0 w-6 h-6 bg-white border-4 border-sky-500 rounded-full z-10"></div>
             <time class="text-sm font-bold text-sky-600">${item.period}</time>
             <h3 class="text-xl font-black text-gray-800 leading-tight mt-1">${item.title}</h3>
@@ -306,7 +307,7 @@
       const growData = [{
         title: "國泰金控 Java 人才培訓班",
         org: "",
-        desc: "國泰 Java 培訓班結訓。專題開發「程式學習平台」，具備三方權限與即時代碼回饋。運用 Spring Boot、Vue 及 SQL 進行前後端串接與資料庫設計，掌握完整開發流程與需求分析。",
+        desc: "國泰金控 Java 培訓班結訓。專題開發「程式學習平台」，具備三方權限與即時代碼回饋。運用 Spring Boot、Vue 及 SQL 進行前後端串接與資料庫設計，掌握完整開發流程與需求分析。",
         tags: ["Java", "Spring Boot", "SQL", "VUE"],
         img: "cathaycert.png"
       }];
